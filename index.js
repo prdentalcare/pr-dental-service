@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect('mongodb://localhost:27017', {
+  .connect(process.env.DATABASE_URL || 'mongodb://localhost/pr-dental-service', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
