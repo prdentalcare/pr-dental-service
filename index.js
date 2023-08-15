@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect(process.env.DATABASE_URL || 'mongodb://localhost/pr-dental-service', {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -125,6 +125,6 @@ app.get('/dental-clinic/admin-person', async (req, res) => {});
 //   res.status(404).send('Page not Found');
 // });
 
-app.listen('5000', () => {
-  console.log(`Server Started on Port 5000`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server Started on Port ${process.env.PORT}`);
 });
