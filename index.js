@@ -100,7 +100,7 @@ app.post('/dental-clinic/slot/', async (req, res) => {
     });
 
     const userAppointment = await Appointment_info.save();
-    // -----||
+
     if (userAppointment) {
       console.log(req.body);
       res.status(201).json({ message: 'successfully Make An Appointment' });
